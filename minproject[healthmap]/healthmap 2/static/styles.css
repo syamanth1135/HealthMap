@@ -1,0 +1,63 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Change font to match the first code */
+    background: url('healthmap_image.jpg') no-repeat center center fixed; /* Add your image URL here */
+    background-size: cover; /* Ensures the background image covers the entire area */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: white; /* Solid background color */
+    padding: 30px; /* Match padding of first code */
+    border-radius: 12px; /* Match border radius */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Match box shadow */
+    max-width: 400px; /* Set a max width */
+    width: 100%; /* Full width for responsiveness */
+    text-align: center;
+}
+
+h1 {
+    color: #333; /* Change heading color */
+    font-size: 24px; /* Match font size */
+    margin-bottom: 20px; /* Match margin */
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    text-align: left; /* Align labels to the left */
+    margin-bottom: 5px; /* Match margin */
+    color: #555; /* Change label color */}
+input[type="text"], input[type="password"] {
+    padding: 12px; /* Match padding */
+    border: 1px solid #ccc; /* Match border */
+    border-radius: 8px; /* Match border radius */
+    margin-bottom: 20px; /* Match margin */
+    font-size: 16px; /* Match font size */
+    transition: border-color 0.3s ease; /* Match transition */}
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #4CAF50; /* Match focus border color */
+    outline: none; /* Remove outline */}
+.btn {
+    background-color: #4CAF50; /* Match button background color */
+    color: white; /* Button text color */
+    padding: 12px; /* Match padding */
+    border: none; /* No border */
+    border-radius: 8px; /* Match border radius */
+    font-size: 16px; /* Match font size */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease; /* Match transition */}
+.btn:hover {background-color: #45a049; /* Match hover background color */}
+.btn:active {background-color: #3e8e41; /* Match active background color */}
+.form-footer {
+    margin-top: 15px; /* Match margin */
+    font-size: 14px; /* Match font size */}
+.form-footer a {
+    color: #4CAF50; /* Link color */
+    text-decoration: none; /* No underline */}
+.form-footer a:hover {text-decoration: underline; /* Underline on hover */}

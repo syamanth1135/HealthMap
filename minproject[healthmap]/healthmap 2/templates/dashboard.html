@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Hospital Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Find Hospitals Near You</h2>
+        <form id="searchForm" method="POST" action="{{ url_for('dashboard') }}">
+            <label for="disease">Enter Disease:</label>
+            <input type="text" id="disease" name="disease" placeholder="e.g. Cardiology, Orthopedics" required autocomplete="off">
+
+            <label for="location">Enter Location:</label>
+            <input type="text" name="location" placeholder="e.g. New York, Los Angeles" required>
+
+            <!-- Hidden fields to store user's lat/lon -->
+            <input type="hidden" id="user_lat" name="user_lat">
+            <input type="hidden" id="user_lon" name="user_lon">
+
+            <button type="submit" class="button">Search Hospitals</button>    
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              <ul class="flashes">
+              {% for message in messages %}
+                <li>{{ message }}</li>
+              {% endfor %}
+              </ul>
+            {% endif %}
+          {% endwith %}
+        </form>
+    </div>
+</body>
+</html>

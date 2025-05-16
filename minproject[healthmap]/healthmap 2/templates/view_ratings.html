@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratings for Hospital</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for star icons -->
+    <style>
+        .stars {
+            color: gold; /* Color for the filled stars */
+        }
+        .stars .empty {
+            color: lightgray; /* Color for the empty stars */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ hospital_name }}</h1>
+        {% if ratings %}
+            <ul>
+                {% for rating in ratings %}
+                    <li>
+                        <strong>{{ rating.Username }}:</strong>
+                        <span class="stars">
+                            {% for i in range(1, 6) %}  <!-- Loop to create 5 stars -->
+                                {% if i <= rating.Rating %}
+                                    <i class="fas fa-star"></i>  <!-- Filled star -->
+                                {% else %}
+                                    <i class="far fa-star empty"></i>  <!-- Empty star -->
+                                {% endif %}
+                            {% endfor %}
+                        </span>
+                        <p><small> (Submitted on: {{ rating.Created_At }})</small></p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No ratings available for this hospital.</p>
+        {% endif %}
+        <button type="button" class="btn" onclick="window.history.back();">Back</button> <!-- Back button -->
+    </div>
+</body>
+</html>
